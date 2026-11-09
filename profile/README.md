@@ -12,6 +12,7 @@
 |---|---|
 | 国际刑法（ICL） | ICC Legal Tools、ICC 官网、Lexsitus/CLICC、OPIL（MPIL/ORIL-ICL）、ICRC、ICD、ICTY/ICTR/IRMCT 判例与记录 |
 | 一般国际法（GIL） | ICJ、ECHR/HUDOC、UNTS、联合国文件、CILRAP/FICHL、国际法博客与期刊元数据 |
+| ICC 模拟法庭 | 书状写作、审校、脚注核验与引证校正 |
 | 检索编排 | `icl-research`、`gil-research` 两个聚合器，以及来源目录和来源开关控制台 |
 | 人工补检 | 登录、订阅全文、UCR/UNTS/ODS 等自动路径无法覆盖的交接流程 |
 | 获取与会话 | GDUFS 统一认证会话、HeinOnline 机构访问、EJIL: Talk!、Anna’s Archive/Breadl 图书链路 |
@@ -22,6 +23,7 @@
 
 - [`InternationalLawRetrieval`](https://github.com/HuiwowICCSkills/InternationalLawRetrieval)：国际法检索工具本体，包含 `icl-research`、`gil-research`、`international-law-manual-research` 和来源目录。
 - [`InternationalLawSourceConsole`](https://github.com/HuiwowICCSkills/InternationalLawSourceConsole)：本地来源开关控制台，读取外部 `source-catalog.json`。
+- [`ICCMootCourtWorkflow`](https://github.com/HuiwowICCSkills/ICCMootCourtWorkflow)：ICC 模拟法庭书状写作工作流，内含 `icc-moot-memorial-writing` 与 `icc-moot-footnote-verifier`；脚注核验与最小校正为默认步骤，交付时附核验报告和校正记录。
 
 ### 国际刑法单站技能
 
@@ -71,6 +73,16 @@ python -X utf8 -m pip install -r "$env:USERPROFILE\Documents\InternationalLawRet
 python -X utf8 -m pip install -r "$env:USERPROFILE\Documents\InternationalLawRetrieval\skills\gil-research\requirements.txt"
 ```
 
+ICC 书状工作流单独安装：
+
+```powershell
+git clone https://github.com/HuiwowICCSkills/ICCMootCourtWorkflow.git "$env:USERPROFILE\Documents\ICCMootCourtWorkflow"
+Copy-Item -Recurse -Force `
+  "$env:USERPROFILE\Documents\ICCMootCourtWorkflow\skills\*" `
+  "$env:USERPROFILE\.codex\skills\"
+python -m pip install lxml
+```
+
 每个单站 skill 可单独克隆到 `~/.codex/skills/<SkillName>`；具体命令见对应仓库的 `README.md`。
 
 ## 外部通用技能
@@ -79,7 +91,7 @@ python -X utf8 -m pip install -r "$env:USERPROFILE\Documents\InternationalLawRet
 
 ## 当前规模
 
-- 23 个公开检索仓库（另加 `.github` 组织主页仓库）
+- 24 个公开仓库：23 个检索仓库 + 1 个 ICC 书状工作流仓库（另加 `.github` 组织主页仓库）
 - 来源目录 37 项，默认启用 34 项
 - 覆盖 ICL、GIL、国际人道法、国际人权法、联合国条约与文件、机构访问和图书获取
 
