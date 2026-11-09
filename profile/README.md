@@ -79,7 +79,7 @@ python -X utf8 -m pip install -r "$env:USERPROFILE\Documents\InternationalLawRet
 
 ## 当前规模
 
-- 23 个公开仓库
+- 23 个公开检索仓库（另加 `.github` 组织主页仓库）
 - 来源目录 37 项，默认启用 34 项
 - 覆盖 ICL、GIL、国际人道法、国际人权法、联合国条约与文件、机构访问和图书获取
 
