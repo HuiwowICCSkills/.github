@@ -1,5 +1,7 @@
 # HuiwowICCSkills
 
+[写在前面](https://github.com/HuiwowICCSkills/.github/blob/main/fbfq.md)
+
 国际法检索、ICC 模拟法庭与法律研究工具集合。
 
 本组织以“一个站点，一个 skill”为基本组织方式：每个来源尽量独立成仓，保留自己的检索入口、访问边界、运行脚本、测试和验证记录；聚合器只负责跨来源编排，不把不同站点的访问逻辑混在一起。检索类仓库遵循这一原则；写作、审校等工作流可把相互依赖的 skill 放在同一仓库，但每个 skill 仍保留独立的 `SKILL.md`、触发条件和边界。
